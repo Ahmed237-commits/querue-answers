@@ -4,38 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>كل الإجابات - منصة حلول الأكواد</title>
+    
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- أيقونة الموقع (Favicon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='75' font-size='70' text-anchor='middle' fill='white' font-family='Arial'>&lt;/&gt;</text></svg>">
+    
     <link rel="stylesheet" href="style.css">
-<!-- أيقونة الموقع (Favicon) -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%232563eb'>💻</text></svg>">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">منصتي</div>
+            <div class="logo">
+                <i class="fas fa-code"></i> كودكس
+            </div>
             <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="answers.html" class="active">الإجابات</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="answers.html" class="active"><i class="fas fa-list"></i> الإجابات</a></li>
             </ul>
+            <button id="theme-toggle" class="theme-btn">
+                <i class="fas fa-sun"></i>
+            </button>
         </nav>
     </header>
 
     <main>
         <section class="answers-header">
-            <h1>كل الإجابات</h1>
+            <h1><i class="fas fa-book-open"></i> كل الإجابات</h1>
             <p>تصفح جميع الإجابات حسب المستوى والدرس. تقدر كمان تحملها كملف JSON.</p>
-<button id="download-json" class="btn">
-    <i class="fas fa-download"></i> تحميل كملف JSON
-</button>
+            <button id="download-json" class="btn">
+                <i class="fas fa-download"></i> تحميل كملف JSON
+            </button>
         </section>
 
         <section class="answers-list" id="answers-container">
-            <!-- المحتوى هيتحط هنا من خلال JavaScript -->
-            <p class="loading">جاري تحميل الإجابات...</p>
+            <p class="loading"><i class="fas fa-spinner fa-spin"></i> جاري تحميل الإجابات...</p>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 منصة حلول الأكواد. كل الحقوق محفوظة يا باشا.</p>
+        <p><i class="far fa-copyright"></i> 2026 منصة حلول الأكواد. كل الحقوق محفوظة يا باشا.</p>
     </footer>
 
     <script src="script.js"></script>

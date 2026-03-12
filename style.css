@@ -4,22 +4,57 @@
     box-sizing: border-box;
 }
 
+/* ========== متغيرات الألوان للثيمات ========== */
+:root {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --border-color: #e2e8f0;
+    --card-bg: #ffffff;
+    --code-bg: #f1f5f9;
+    --hover-bg: #f1f5f9;
+    --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --hero-gradient: linear-gradient(135deg, #2563eb, #1e40af);
+    --btn-bg: white;
+    --btn-text: #2563eb;
+    --footer-text: #64748b;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border-color: #334155;
+    --card-bg: #1e293b;
+    --code-bg: #0f172a;
+    --hover-bg: #334155;
+    --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+    --hero-gradient: linear-gradient(135deg, #1e40af, #0f172a);
+    --btn-bg: #2563eb;
+    --btn-text: white;
+    --footer-text: #94a3b8;
+}
+
 body {
     font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    background-color: #f8fafc;
-    color: #0f172a;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    background-color: var(--bg-secondary);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     position: sticky;
     top: 0;
     z-index: 10;
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav {
@@ -37,6 +72,10 @@ nav {
     color: #2563eb;
 }
 
+.logo i {
+    margin-left: 8px;
+}
+
 nav ul {
     display: flex;
     gap: 2rem;
@@ -45,16 +84,59 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #334155;
+    color: var(--text-secondary);
     font-weight: 500;
     padding: 0.5rem 0;
     transition: color 0.2s ease;
     border-bottom: 2px solid transparent;
 }
 
+nav a i {
+    margin-left: 8px;
+}
+
 nav a:hover, nav a.active {
     color: #2563eb;
     border-bottom-color: #2563eb;
+}
+
+/* ========== زر تبديل الثيم ========== */
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background-color: var(--hover-bg);
+    transform: rotate(15deg);
+}
+
+.theme-btn i {
+    transition: all 0.5s ease;
+}
+
+.theme-btn:active i {
+    animation: spin 0.5s ease;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+[data-theme="dark"] .theme-btn i {
+    color: #fbbf24;
 }
 
 main {
@@ -65,21 +147,25 @@ main {
     width: 100%;
 }
 
-/* Home Page Styles */
+/* ========== الصفحة الرئيسية ========== */
 .hero {
-    background: linear-gradient(135deg, #2563eb, #1e40af);
+    background: var(--hero-gradient);
     color: white;
     padding: 4rem 3rem;
     border-radius: 2rem;
     text-align: center;
     margin-bottom: 3rem;
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    box-shadow: var(--shadow);
 }
 
 .hero h1 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
     line-height: 1.2;
+}
+
+.hero h1 i {
+    margin-left: 10px;
 }
 
 .hero p {
@@ -91,8 +177,8 @@ main {
 
 .btn {
     display: inline-block;
-    background-color: white;
-    color: #2563eb;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     font-weight: 600;
     padding: 0.8rem 2rem;
     border-radius: 9999px;
@@ -104,10 +190,22 @@ main {
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
+.btn i {
+    margin-left: 8px;
+}
+
 .btn:hover {
-    background-color: #f1f5f9;
     transform: scale(1.05);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+[data-theme="dark"] .btn:hover {
+    background-color: #1d4ed8;
+}
+
+[data-theme="dark"] .hero .btn {
+    background-color: white;
+    color: #2563eb;
 }
 
 .features, .about {
@@ -117,9 +215,14 @@ main {
 .features h2, .about h2, .answers-header h1 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #0f172a;
+    color: var(--text-primary);
     position: relative;
     padding-bottom: 0.5rem;
+}
+
+.features h2 i, .about h2 i, .answers-header h1 i {
+    margin-left: 10px;
+    color: #2563eb;
 }
 
 .features h2::after, .about h2::after, .answers-header h1::after {
@@ -140,17 +243,24 @@ main {
 }
 
 .feature-card {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem 1.5rem;
     border-radius: 1.5rem;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
+    text-align: center;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
 }
 
 .feature-card h3 {
@@ -160,23 +270,23 @@ main {
 }
 
 .feature-card p {
-    color: #475569;
+    color: var(--text-secondary);
 }
 
 .about {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2.5rem;
     border-radius: 1.5rem;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
 }
 
 .about p {
     margin-bottom: 1rem;
-    color: #334155;
+    color: var(--text-secondary);
 }
 
-/* Answers Page Styles */
+/* ========== صفحة الإجابات ========== */
 .answers-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -187,7 +297,7 @@ main {
 }
 
 .answers-header p {
-    color: #475569;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
 }
@@ -199,26 +309,33 @@ main {
 }
 
 .level-card {
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 1.5rem;
     padding: 2rem;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-    border: 1px solid #e2e8f0;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
 }
 
 .level-card h2 {
     font-size: 1.8rem;
-    color: #1e293b;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
     padding-bottom: 0.75rem;
     border-bottom: 3px solid #2563eb;
 }
 
+.level-card h2 i {
+    color: #2563eb;
+    margin-left: 10px;
+    font-size: 1.8rem;
+}
+
 .lesson-card {
-    background-color: #f1f5f9;
+    background-color: var(--code-bg);
     border-radius: 1rem;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
 }
 
 .lesson-card:last-child {
@@ -227,8 +344,18 @@ main {
 
 .lesson-card h3 {
     font-size: 1.3rem;
-    color: #2563eb;
     margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.lesson-card h3 i {
+    margin-left: 8px;
+    font-size: 1.3rem;
+}
+
+.lesson-card h3 i.fa-graduation-cap {
+    color: #7c3aed;
 }
 
 .answers-list-ul {
@@ -237,16 +364,30 @@ main {
 }
 
 .answer-item {
-    background-color: white;
+    background-color: var(--bg-secondary);
     border-radius: 0.75rem;
     padding: 1rem 1.5rem;
     margin-bottom: 0.75rem;
     font-family: 'Courier New', Courier, monospace;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--border-color);
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
     white-space: pre-wrap;
     direction: ltr;
     text-align: left;
+    color: var(--text-primary);
+    transition: transform 0.2s ease;
+}
+
+.answer-item:hover {
+    transform: translateX(-5px);
+    border-right: 3px solid #2563eb;
+}
+
+.answer-item i {
+    color: #2563eb;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    opacity: 0.7;
 }
 
 .answer-item:last-child {
@@ -255,60 +396,43 @@ main {
 
 .loading {
     text-align: center;
-    color: #64748b;
+    color: var(--text-secondary);
     font-size: 1.2rem;
     padding: 3rem;
+}
+
+.loading i {
+    margin-left: 8px;
+    color: #2563eb;
 }
 
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #ffffff;
-    border-top: 1px solid #e2e8f0;
-    color: #64748b;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    color: var(--footer-text);
     margin-top: 3rem;
 }
-/* أيقونات التنقل */
-nav ul li a i {
-    margin-left: 8px;
-    font-size: 1.1rem;
+
+footer i {
+    margin-left: 5px;
 }
 
-/* أيقونة التحميل */
-#download-json i {
-    margin-left: 8px;
+/* ========== تحسين التمرير ========== */
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-/* أيقونات البطاقات */
-.feature-card i {
-    font-size: 2.5rem;
-    color: #2563eb;
-    margin-bottom: 1rem;
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
 }
 
-/* أيقونة مستوى */
-.level-card h2 i {
-    color: #2563eb;
-    margin-left: 10px;
-    font-size: 1.8rem;
+::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 5px;
 }
 
-/* أيقونة الدرس العادي */
-.lesson-card h3 i {
-    color: #2563eb;
-    margin-left: 8px;
-    font-size: 1.3rem;
-}
-
-/* أيقونة نهاية الفصل - بشكل مميز */
-.lesson-card h3 i.fa-graduation-cap {
-    color: #7c3aed;
-}
-
-/* أيقونة كل إجابة */
-.answer-item i {
-    color: #2563eb;
-    margin-left: 10px;
-    font-size: 0.9rem;
-    opacity: 0.7;
+::-webkit-scrollbar-thumb:hover {
+    background: #1d4ed8;
 }

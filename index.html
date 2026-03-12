@@ -4,59 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة حلول الأكواد</title>
+    
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- أيقونة الموقع (Favicon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='75' font-size='70' text-anchor='middle' fill='white' font-family='Arial'>&lt;/&gt;</text></svg>">
+    
     <link rel="stylesheet" href="style.css">
-<!-- أيقونة الموقع (Favicon) -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%232563eb'>💻</text></svg>">
 </head>
 <body>
     <header>
-      <nav>
-    <div class="logo">
-        <i class="fas fa-code"></i> منصتي
-    </div>
-    <ul>
-        <li><a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
-        <li><a href="answers.html"><i class="fas fa-list"></i> الإجابات</a></li>
-    </ul>
-</nav>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-code"></i> كودكس
+            </div>
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="answers.html"><i class="fas fa-list"></i> الإجابات</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-btn">
+                <i class="fas fa-sun"></i>
+            </button>
+        </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>مرحباً بك في منصة حلول الأكواد</h1>
-            <p>المكان الوحيد اللي هتلاقي فيه كل إجابات دروس المنصه كوريو بشكل منظم وواضح. عشان متضيعش وقتك، احنا بنوفرلك الحلول النموذجية لكل المستويات والدروس.</p>
-            <a href="answers.html" class="btn">استعرض الإجابات</a>
+            <h1><i class="fas fa-rocket"></i> مرحباً بك في منصة حلول الأكواد</h1>
+            <p>المكان الوحيد اللي هتلاقي فيه كل إجابات تمارين البرمجة بشكل منظم وواضح. عشان متضيعش وقتك في البحث، احنا بنوفرلك الحلول النموذجية لكل المستويات والدروس.</p>
+            <a href="answers.html" class="btn"><i class="fas fa-eye"></i> استعرض الإجابات</a>
         </section>
 
-       <section class="features">
-    <h2><i class="fas fa-star"></i> إيه اللي بنقدمه؟</h2>
-    <div class="feature-grid">
-        <div class="feature-card">
-            <i class="fas fa-layer-group"></i>
-            <h3>حلول منظمة</h3>
-            <p>إجابات مصنفة حسب المستوى ورقم الدرس، عشان توصل لللي انت عاوزه بسرعة.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-paint-brush"></i>
-            <h3>تصميم بسيط</h3>
-            <p>واجهة مستخدم تقدر تقرأ منها الكود براحتك من غير أي تعقيدات.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-download"></i>
-            <h3>تحميل مباشر</h3>
-            <p>تقدر تحمل كل الإجابات كملف JSON وتستخدمه في أي وقت.</p>
-        </div>
-    </div>
-</section>
+        <section class="features">
+            <h2><i class="fas fa-star"></i> إيه اللي بنقدمه؟</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>حلول منظمة</h3>
+                    <p>إجابات مصنفة حسب المستوى ورقم الدرس، عشان توصل لللي انت عاوزه بسرعة.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>تصميم بسيط</h3>
+                    <p>واجهة مستخدم تقدر تقرأ منها الكود براحتك من غير أي تعقيدات.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-download"></i>
+                    <h3>تحميل مباشر</h3>
+                    <p>تقدر تحمل كل الإجابات كملف JSON وتستخدمه في أي وقت.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>تحديث مستمر</h3>
+                    <p>بنضيف إجابات جديدة باستمرار عشان نغطي كل المنهج.</p>
+                </div>
+            </div>
+        </section>
 
         <section class="about">
-            <h2>عن المنصة</h2>
-<p>المنصه بدأت لما قولت ان فيه كثير من اصحابي عاوزني احللهم المنصه فا بمناسبه الايام الكريمه دي هديهم اجابات المنصه   ويعني الدنيا هتبقي  حلوة معاك انت بس انسخ والصق في المنصه.</p>
+            <h2><i class="fas fa-info-circle"></i> عن المنصة</h2>
+            <p>بدأت الفكرة لما لقينا إن الطلبة بيدوروا على الإجابات في أكتر من مكان. فقررنا نعمل منصة مركزية تجمع كل الحلول، تكون مرجع سريع وسهل للجميع. المحتوى اللي هنا هو ناتج مجهود مجموعة من المبرمجين المتطوعين اللي بيحبوا يساعدوا غيرهم.</p>
+            <p>احنا بنسعى إننا نكون أكبر مكتبة حلول برمجية عربية، ونساعد الجيل الجديد يدخل عالم البرمجة بثقة.</p>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 منصة حلول الأكواد. كل الحقوق محفوظة يا باشا.</p>
+        <p><i class="far fa-copyright"></i> 2026 منصة حلول الأكواد. كل الحقوق محفوظة يا باشا.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

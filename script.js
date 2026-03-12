@@ -331,10 +331,58 @@ function downloadJSON() {
     URL.revokeObjectURL(url);
 }
 
-// نشغل الدالة بتاعة العرض أول ما الصفحة تتحمل
+// دالة لتحميل البيانات كملف JSON
+function downloadJSON() {
+    const dataStr = JSON.stringify(answersData, null, 2); // نحول البيانات لنص JSON منسق
+    const blob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'answers.json'; // اسم الملف اللي هيتحمل
+    link.click();
+
+    // ننظف الـ URL بعد ما خلصنا
+    URL.revokeObjectURL(url);
+}
+
+// ========== Dark/Light Mode ==========
+function initTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+}
+
+function updateThemeIcon(theme) {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+    
+    const icon = themeToggle.querySelector('i');
+    if (theme === 'dark') {
+        icon.className = 'fas fa-moon';
+    } else {
+        icon.className = 'fas fa-sun';
+    }
+}
+
+// نشغل الدوال أول ما الصفحة تتحمل
 document.addEventListener('DOMContentLoaded', () => {
     displayAnswers();
-
+    initTheme(); // <===== ده السطر اللي كان ناقص !!!
+    
     // نضيف حدث للزرار بتاع التحميل لو هو موجود
     const downloadBtn = document.getElementById('download-json');
     if (downloadBtn) {
