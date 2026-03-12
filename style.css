@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover, nav a.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+/* Home Page Styles */
+.hero {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    padding: 4rem 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: white;
+    color: #2563eb;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.btn:hover {
+    background-color: #f1f5f9;
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.features, .about {
+    margin-bottom: 4rem;
+}
+
+.features h2, .about h2, .answers-header h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #0f172a;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.features h2::after, .about h2::after, .answers-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 4px;
+    background-color: #2563eb;
+    border-radius: 2px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #2563eb;
+}
+
+.feature-card p {
+    color: #475569;
+}
+
+.about {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.about p {
+    margin-bottom: 1rem;
+    color: #334155;
+}
+
+/* Answers Page Styles */
+.answers-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.answers-header h1 {
+    display: inline-block;
+}
+
+.answers-header p {
+    color: #475569;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.answers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.level-card {
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.level-card h2 {
+    font-size: 1.8rem;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #2563eb;
+}
+
+.lesson-card {
+    background-color: #f1f5f9;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.lesson-card:last-child {
+    margin-bottom: 0;
+}
+
+.lesson-card h3 {
+    font-size: 1.3rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.answers-list-ul {
+    list-style: none;
+    padding: 0;
+}
+
+.answer-item {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.75rem;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    white-space: pre-wrap;
+    direction: ltr;
+    text-align: left;
+}
+
+.answer-item:last-child {
+    margin-bottom: 0;
+}
+
+.loading {
+    text-align: center;
+    color: #64748b;
+    font-size: 1.2rem;
+    padding: 3rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    margin-top: 3rem;
+}

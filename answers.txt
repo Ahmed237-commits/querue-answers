@@ -1,0 +1,716 @@
+// Level 21 Lesson 1 
+//1 
+let science = 100;
+if (science == 100) {
+  console.log("Reward: steak");
+}
+// 2
+let science = 80;
+if (science == 100) {
+  console.log("Reward: steak");
+} else if ( science >= 80 ){
+  console.log("Reward: ice cream");
+} else {
+  console.log("No games for 1 week.");
+}
+// Lesson 2 
+// 1
+score >= 80  
+// 2
+score <= 40
+// 3
+numberOfPeople  >= 3 && total == 3333 
+// 4
+numberOfPeople >= 10 || total >= 12000
+
+
+
+
+
+
+level 21 lesson 5
+// 1
+let score = 90;
+if(score >= 80 ) {
+    console.log("Test Passed")
+}
+// 2 
+let score = 90;
+let rank = 1;
+if (score >= 80) {
+console.log("Test Passed");
+if (rank == 1) {
+console.log("Trophy Acquired");
+}
+}
+// 3 
+let rank = 1; 
+if(rank == 1) {
+    console.log("Regional Champion")
+}
+// 4 
+let rank = 1;
+let fishCaught = 27;
+if (rank == 1) {
+  console.log("Regional Champion");
+  if (fishCaught >= 30) {
+    console.log("New Tournament Record");
+  }
+}
+// level 22 lesson 1 
+//1 and 2 
+for ( let i = 0; i < 3; i++ )
+// 3 
+for (let i =0 ; i < 10; i++) {
+    console.log("silk")
+}
+ // lesson 3 
+//1
+for (let i = 0; i < 5 ; i ++) {
+    console.log("sit-up")
+}
+// 2 
+for (let i = 0; i < 5; i++) {
+  console.log("sit-up");
+  if (i == 2) {
+    console.log("running");
+  }
+}
+//lesson 4 
+// 1
+for (let i = 0; i<5 ; i++) {
+ console.log("lunch box")   
+}
+ // 2
+ for (let i = 0; i < 5; i++) {
+  console.log("lunch box");
+  if (i == 3) {
+    console.log("fruit");
+  }
+}
+ lesson 5 
+ //1
+ let i = 0;
+i += 3;
+console.log(i); 
+// 2 
+let num = 0;
+num += 5;
+console.log(num);
+level 23 lesson 1
+// 1
+function divide6(total) {
+  let per = total / 6;
+  return per;
+}
+//2
+console.log(divide6(72));
+// 3
+function split5(total) {
+  let per = total / 5;
+  return per;
+}
+console.log(split5(6250));
+// lesson 3
+// 1
+function goodMorning() {
+    let greeting = "Good morning!"
+    return greeting
+}
+console.log(goodMorning())
+// lesson 4 
+//1
+function sum (num1, num2) {
+    let result = num1 + num2;
+    return result
+}
+// 2
+console.log(sum(50 , 100)) 
+// Level 24 Lesson 1
+// 1
+let score = 82;
+if (score == 100) {
+  console.log("Perfect Score");
+} else if (score >= 75) {
+  console.log("Pass");
+} else {
+  console.log("Retest");
+}
+//2
+let score = 90;
+let rank = 1;
+if (score >= 80) {
+  console.log("Test Passed");
+  if (rank == 1) {
+    console.log("Trophy Acquired");
+  }
+}
+// 3
+for (let i = 0; i < 3; i++) {
+  console.log("Apple");
+  if (i == 1) {
+    console.log("Banana");
+  }
+}
+// 4
+function goodNight(){
+  let greeting = "Good night!";
+  return greeting;
+}
+console.log(goodNight());
+// 5
+function calc (num1 , num2) {
+    let result = num1 * num2
+return result
+}
+console.log(calc(55 , 75))
+// level 25 lesson 2
+// 1
+let num = 1;
+for(let i = 0; i < 5; i++){
+  num = num * 2;
+}
+console.log(num);
+// 2 
+let i = 1; i <= 4; i++
+// level 26 lesson 1
+//1
+let tempList = [36.2, 36.5, 36.3, 36.8, 36.4];
+//2
+let tempList = [36.2, 36.5, 36.3, 36.8, 36.4, 36.9, 37.0];
+ // 3
+ let tempList = [36.2, 36.5, 36.3, 36.8, 36.4, 36.9, 37.0];
+let sum = 0;
+for(let i = 0; i < 7; i++){
+  sum = sum + tempList[i];
+}
+console.log(sum / 7);
+// 
+14
+// 5
+let i = 0; i < tempList.length; i++
+// 6
+let tempList = [36.0, 36.5, 36.3, 36.8, 36.4, 36.9, 36.6, 37.0, 37.1, 36.9, 36.4, 36.6, 36.7, 36.5];
+for (let i = 0; i < tempList.length; i++) {
+  if (tempList[i] >= 37.0) {
+    console.log("Be careful!");
+  }
+} 
+// 7
+let tempList = [36.0, 36.5, 36.3, 36.8, 36.4, 36.9, 36.6, 37.0, 37.1, 36.9, 36.4, 36.6, 36.7, 36.5];
+for (let i = 0; i < tempList.length; i++) {
+  if (tempList[i] >= 37.5) {
+    console.log("Avoid going outside!");
+  }
+} 
+// lesson 2
+// 1
+let num = 1;
+for (let i = 0 ; i < 7 ; i++) {
+    num  = num * 7;
+}
+console.log(num) 
+//2
+let num = 1;
+for (let i = 1; i <= 5; i++) {
+  num = num * i;
+}
+console.log(num);
+// 3
+let num = 1;
+for (let i = 1; i <= 15; i++) {
+  num = num * i;
+}
+console.log(num); 
+// 4 
+console.log(tempList[4])
+//5
+tempList.length
+// 6
+let tempList = [36.0, 36.5, 36.3, 36.8, 36.4, 36.9, 36.6, 37.0, 37.1, 36.9, 36.4, 36.6, 36.7, 36.5];
+for (let i = 0; i < tempList.length; i++) {
+  if (tempList[i] >= 37.0) {
+    console.log("Be careful!");
+  }
+} 
+// Level 28 lesson 1
+//1 
+let degreeList = [2, 1, 2, 1, 0, 1, 1];
+console.log(degreeList[4]); 
+// lesson 2
+//1
+for (let degree of degreeList) {
+  console.log(degree);
+} 
+//2
+let numList = [5, 10, 15, 20];
+for (let num of numList) {
+  console.log(num);
+} 
+// Level 29 lesson 1
+//1
+let score = 100;
+if (score == 100) {
+  console.log("Reward is steak");
+} 
+// 2
+let score = 85;
+if (score == 100) {
+  console.log("Reward is steak");
+} else if (score >= 80) {
+  console.log("Reward is cake");
+} 
+//3
+let score = 62;
+if (score == 100) {
+  console.log("Reward is steak");
+} else if (score >= 80) {
+  console.log("Reward is cake");
+} else {
+  console.log("No games for a week");
+} 
+// lesson 2 
+//1 
+let fish = 50;
+if (fish >= 50) {
+  console.log("Big catch!");
+} 
+// 2
+let fish = 50;
+let  count = 0;
+if (fish >= 50) {
+  console.log("Big catch!");
+  count =  count + 1;
+  console.log("Big fish counter:" +  count);
+} 
+//3 
+let fish = 120;
+let  count = 0;
+if (fish >= 100) {
+  console.log("Super big catch!");  
+  count =  count + 1;
+  console.log("Super big fish counter:" +  count);
+} 
+//lesson 3
+//1
+let weather = "sunny";
+if (weather == "sunny") {
+  console.log("Picnic in the park");
+} else {
+  console.log("Lunch at home");
+}
+level 30 
+// lesson 1
+//1
+for (let degree of degreeList) {
+  console.log(degree);
+} 
+// 2
+let wordList = ["tomato", "carrot", "onion"];
+for (let word of wordList) {
+  console.log(word);
+} 
+// 3
+let fish = 50;
+let big = 0;
+if (fish >= 50) {
+  console.log("Big catch!！");
+  big = big + 1;
+  console.log("Big fish counter:" + big);
+} 
+//4 
+let weather = "sunny";
+let shop = "OPEN";
+
+if (weather == "sunny") {
+  if (shop == "OPEN") {
+    console.log("Buy bread and have a picnic");
+  }
+} else {
+  console.log("Lunch at home");
+} 
+// 5
+let weather = "sunny";
+let group = "Group B";
+
+if (weather == "sunny") {
+  if (group == "Group A") {
+    console.log("Destination is the zoo");
+  } else if (group == "Group B") {
+    console.log("Destination is the museum");
+  } else {
+    console.log("Destination is the art museum");
+  }
+} else {
+  console.log("Field trip canceled");
+} 
+// Level 31 
+// lesson 1 
+// 1
+function sum(freestyle, breaststroke) {
+  let result = freestyle + breaststroke;
+  return result;
+} 
+// 2
+console.log(sum(39.5,60.5));
+ // 3
+ let teamRed = sum(39.5,60.5);
+console.log(teamRed); 
+// 4
+function sum(freestyle, breaststroke, backstroke) {
+  let time = freestyle + breaststroke + backstroke;
+  return time;
+}
+let teamRed = sum(39.5, 60.5, 58.5);
+console.log(teamRed);
+let teamBlue = sum(40, 62, 58);
+console.log(teamBlue); 
+// 5
+function sum(freestyle, breaststroke, backstroke) {
+  let time = freestyle + breaststroke + backstroke;
+  return time;
+}
+let teamRed = sum(39.5, 60.5, 58.5);
+console.log(teamRed);
+let teamBlue = sum(40, 62, 58);
+console.log(teamBlue);
+let teamGreen = sum(41, 59.5, 60);
+console.log(teamGreen); 
+// Lesson  3 
+// 1
+Math.min(158.5, 160, 160.5) 
+//2 
+Math.min(teamRed, teamBlue, teamGreen); 
+// Level 32 
+// Lesson 1
+//1 
+let day of volunteerList 
+// 2
+ if (day == "Yes") {
+    count++;
+  }
+  //3 
+  let volunteerList = ["Yes", "No", "Yes", "Yes", "Yes", "Yes", "No", "No", "Yes", "Yes", "Yes", "No", "Yes", "No"];
+let count = 0;
+for (let day of volunteerList) {
+  if (day == "No") {
+    count++;
+  }
+}
+console.log(count); 
+// Lesson 3 
+// 1
+let sandwichType = "strawberry jam";
+if (sandwichType == "savory") {
+  console.log("Check what's inside the sandwich");
+} else {
+  console.log("Eat strawberry jam sandwich");
+} 
+// 2  
+let sandwichType = "savory";
+let savory = "tuna";
+if (sandwichType == "savory") {
+  if (savory == "tuna") {
+    console.log("Exchange with Cody");
+  } else {
+    console.log("Eat ham sandwich");
+  }
+} else {
+  console.log("Eat strawberry jam sandwich");
+} 
+// Level 33 
+// Lesson 1
+// 1
+function sum(freestyle, breaststroke, backstroke) {
+  let result = freestyle + breaststroke + backstroke;
+  return result;
+} 
+// 2
+function sum(freestyle, breaststroke,backstroke) {
+  let result = freestyle + breaststroke +backstroke;
+  return result;
+}
+let teamRed = sum(39.5, 60.5, 58.5);
+console.log(teamRed); 
+// 3
+function sum(freestyle, breaststroke, backstroke) {
+  let time = freestyle + breaststroke + backstroke;
+  return time;
+}
+let teamRed = sum(39.5, 60.5, 58.5);
+console.log(teamRed);
+let teamBlue = sum(40, 62, 58);
+console.log(teamBlue);
+let teamGreen = sum(41, 59.5, 60);
+console.log(teamGreen); 
+// 4
+ Math.min(teamRed, teamBlue, teamGreen) 
+ // 5
+ let day of volunteerList 
+ // 6
+ if (day == "Yes") {
+    count++;
+  }
+  // 7
+  let weather = "sunny";
+if (weather == "sunny") {
+  console.log("exercise");
+} else {
+  console.log("read a book");
+}
+// 7
+let sandwichType = "savory";
+let savory = "tuna";
+if (sandwichType == "savory") {
+  if (savory == "tuna") {
+    console.log("Exchange with Cody");
+  } else {
+    console.log("Eat ham sandwich");
+  }
+} else {
+  console.log("Eat strawberry jam sandwich");
+}
+// Level 34 
+// Lesson 1
+Copy Paste 
+// lesson 2 
+// 1
+<span></span>
+// 2
+<p>My favorite fruit is <span class="apple">Apple</span></p>
+<p>My favorite animal is <span class="giraffe">Giraffe</span></p>
+<p>Today's shoes are <span class="sneaker">Light blue sneakers</span></p>
+// Lesson 3 
+Copy Paste
+// Level 35 
+// Lesson 3
+//1 
+.btn1:hover {
+  background-color: lime;
+  transition: 2s;
+}
+.btn2:hover {
+  background-color: yellow;
+}
+//2
+.btn1:hover {
+  background-color: lime;
+  transition: 2s;
+}
+.btn2:hover {
+  background-color: yellow;
+  transition: 5s;
+}
+// Lesson 4
+// 1
+h1 {
+  border: 5px solid red;
+} 
+// Level 35 
+// Lesson 1
+// 1
+<h1>Sports Festival Program</h1>
+<img src="sports.png"> 
+// 2
+<p>My favorite fruit is <span class="apple">Apple</span></p>
+<p>My favorite animal is <span class="giraffe">Giraffe</span></p> 
+// 3
+<h1>Event Content Survey</h1>
+<p>Opinion</p>
+<input type="text">
+<input type="button" value="Submit"> 
+ // 4
+ h1 {
+  background-color: pink;
+}
+li {
+  font-weight: bold;
+}
+.red {
+  color: red;
+} 
+// 5
+.btn1:hover {
+  background-color: lime;
+}
+.btn2:hover {
+  background-color: yellow;
+  transition: 2s;
+} 
+// 6
+h1 {
+  border: 10px double red;
+} 
+// Level 37
+// Lesson 1 
+//1 
+let bloodType = "A";
+
+if (bloodType == "A") {
+  console.log("Today's fortune is decent");
+} 
+// 2
+let bloodType = "B";
+
+if (bloodType == "A") {
+  console.log("Today's fortune is decent");
+} else if (bloodType == "B") {
+  console.log("Today's fortune is excellent!");
+} else if (bloodType == "O") {
+  console.log("Today's fortune looks good!");
+} else if (bloodType == "AB") {
+  console.log("Today's fortune might not be so good...");
+} 
+// 3
+let bloodType = "Unknown";
+
+if (bloodType == "A") {
+  console.log("Today's fortune is decent");
+} else if (bloodType == "B") {
+  console.log("Today's fortune is excellent!");
+} else if (bloodType == "O") {
+  console.log("Today's fortune looks good!");
+} else if (bloodType == "AB") {
+  console.log("Today's fortune might not be so good...");
+} else {
+  console.log("Let's find out your blood type!");
+} 
+// Lesson 2
+ // 1
+ let bloodType = "A";
+
+switch (bloodType) {
+  case "A":
+    console.log("Today's fortune is decent");
+    break;
+} 
+// 2
+let bloodType = "B";
+
+switch (bloodType) {
+  case "A":
+    console.log("Today's fortune is decent");
+    break;
+  case "B":
+    console.log("Today's fortune is excellent!");
+    break;
+} 
+// 3
+let bloodType = "AB";
+
+switch (bloodType) {
+  case "A":
+    console.log("Today's fortune is decent");
+    break;
+  case "B":
+    console.log("Today's fortune is excellent!");
+    break;
+  case "O":
+    console.log("Today's fortune looks good!");
+    break;
+  case "AB":
+    console.log("Today's fortune might not be so good...");
+    break;
+} 
+// 4
+let bloodType = "Unknown";
+
+switch (bloodType) {
+  case "A":
+    console.log("Today's fortune is decent");
+    break;
+  case "B":
+    console.log("Today's fortune is excellent!");
+    break;
+  case "O":
+    console.log("Today's fortune looks good!");
+    break;
+  case "AB":
+    console.log("Today's fortune might not be so good...");
+    break;
+  default:
+    console.log("Let's find out your blood type!");
+    break;
+} 
+// Level 38 
+//Lesson 1
+// 1
+cookies / 3 
+// 2
+snacks % 6 
+// Lesson 2
+// 1 
+console.log(members % 6);
+// 2
+if (snacks % 3 > 0) {
+  console.log("Rick gets it");
+} 
+// Lesson 3
+// 1
+let donuts = 20;
+
+switch (donuts % 3) {
+  case 0:
+    console.log("Let's clean up the trash neatly");
+    break;
+  case 1:
+    console.log("Give it to Mom");
+    break;
+  case 2:
+    console.log("Give it to Mom and Dad");
+    break;
+} 
+// Level 39 
+// Lesson 1 
+// 1
+let bloodType = "Unknown";
+
+switch (bloodType) {
+  case "A":
+    console.log("Today's fortune is decent");
+    break;
+  case "B":
+    console.log("Today's fortune is excellent!");
+    break;
+  default:
+    console.log("Let's find out your blood type!");
+    break;
+} 
+// 2
+let cookies = 20;
+console.log(cookies % 3); 
+// 3 
+let cookies = 20;
+if (cookies % 3 > 0) {
+  console.log("Cody gets it");
+} 
+// 4
+let orange = 85;
+
+switch (orange % 3) {
+  case 0:
+    console.log("They were divided equally");
+    break;
+  case 1:
+    console.log("Give it to Grandma");
+    break;
+  case 2:
+    console.log("Give it to the neighbors");
+    break;
+} 
+// Level 40 
+// lesson 1
+ // 1
+ const day = 7;
+// 2
+let day = 30;
+// 3
+const myBirthday = "September 1st";
+// Lesson 2
+// 1
+const myScore = 90;
+
+if (myScore != 100){
+  console.log("Aim for a perfect score!");
+}
+// Nearly We Have Finished Bye Bye!!!!
