@@ -251,13 +251,13 @@ const answersData = [
 
 // دالة لعرض الإجابات في صفحة answers.html
 // دالة لعرض الإجابات في صفحة answers.html
+// دالة لعرض الإجابات في صفحة answers.html
 function displayAnswers() {
     const container = document.getElementById('answers-container');
-    if (!container) return; // لو مش في صفحة الإجابات، متكملش
+    if (!container) return;
 
-    container.innerHTML = ''; // نمسك الرسالة القديمة "جاري التحميل"
+    container.innerHTML = '';
 
-    // نجمع الإجابات حسب المستوى
     const groupedByLevel = {};
     answersData.forEach(item => {
         if (!groupedByLevel[item.level]) {
@@ -269,7 +269,6 @@ function displayAnswers() {
         groupedByLevel[item.level][item.lesson].push(item.code);
     });
 
-    // نرتب المستويات تصاعدياً
     const sortedLevels = Object.keys(groupedByLevel).sort((a, b) => a - b);
 
     sortedLevels.forEach(level => {
@@ -277,11 +276,11 @@ function displayAnswers() {
         levelCard.className = 'level-card';
         
         const levelTitle = document.createElement('h2');
-        levelTitle.textContent = `المستوى ${level}`;
+        // إضافة أيقونة للمستوى
+        levelTitle.innerHTML = `<i class="fas fa-layer-group"></i> المستوى ${level}`;
         levelCard.appendChild(levelTitle);
 
         const lessons = groupedByLevel[level];
-        // نرتب الدروس تصاعدياً
         const sortedLessons = Object.keys(lessons).sort((a, b) => a - b);
 
         sortedLessons.forEach(lesson => {
@@ -290,11 +289,11 @@ function displayAnswers() {
             
             const lessonTitle = document.createElement('h3');
             
-            // ✅ التعديل هنا: لو الدرس رقم 0، اكتب "نهاية الفصل" بدلاً من "الدرس 0"
+            // إضافة أيقونات مناسبة لكل نوع درس
             if (lesson == 0) {
-                lessonTitle.textContent = `🎓 نهاية الفصل`;
+                lessonTitle.innerHTML = `<i class="fas fa-graduation-cap" style="color: #7c3aed;"></i> 🎓 نهاية الفصل`;
             } else {
-                lessonTitle.textContent = `الدرس ${lesson}`;
+                lessonTitle.innerHTML = `<i class="fas fa-book-open"></i> الدرس ${lesson}`;
             }
             
             lessonCard.appendChild(lessonTitle);
@@ -305,7 +304,8 @@ function displayAnswers() {
             lessons[lesson].forEach(code => {
                 const listItem = document.createElement('li');
                 listItem.className = 'answer-item';
-                listItem.textContent = code;
+                // إضافة أيقونة صغيرة لكل إجابة
+                listItem.innerHTML = `<i class="fas fa-code"></i> ${code}`;
                 answersList.appendChild(listItem);
             });
 
