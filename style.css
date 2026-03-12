@@ -436,3 +436,87 @@ footer i {
 ::-webkit-scrollbar-thumb:hover {
     background: #1d4ed8;
 }
+/* تنسيقات خاصة بالنسخ */
+.answer-item {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.answer-item:hover {
+    transform: translateX(-5px);
+    border-right: 3px solid #2563eb;
+}
+
+.answer-item .copy-icon {
+    color: #2563eb;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.answer-item:hover .copy-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* رسالة تأكيد النسخ */
+.answer-item.copied {
+    animation: copiedFlash 0.5s ease;
+}
+
+@keyframes copiedFlash {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* تنسيق ليفل 1 في الصفحة الرئيسية */
+.feature-card i {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #2563eb;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+}
+
+/* تنسيق الأرقام - إزالتها من الصفحة الرئيسية */
+.feature-card .badge {
+    display: none; /* إخفاء أي أرقام */
+}
+
+/* تنسيق رسالة "تم النسخ" */
+.copy-success {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #10b981;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+    font-weight: bold;
+}
+
+@keyframes slideUp {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 20px;
+        opacity: 1;
+    }
+}

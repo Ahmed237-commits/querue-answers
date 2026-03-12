@@ -389,3 +389,134 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadBtn.addEventListener('click', downloadJSON);
     }
 });
+// دالة نسخ النص إلى الحافظة
+async function copyToClipboard(text, element) {
+    try {
+        await navigator.clipboard.writeText(text);
+        
+        // إضافة تأثير مؤقت للعنصر
+        const originalBg = element.style.backgroundColor;
+        const originalInnerHTML = element.innerHTML;
+        
+        element.style.backgroundColor = '#10b981';
+        element.style.color = 'white';
+        element.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
+        
+        setTimeout(() => {
+            element.style.backgroundColor = '';
+            element.style.color = '';
+            element.innerHTML = originalInnerHTML;
+        }, 1000);
+        
+    } catch (err) {
+        console.error('فشل النسخ:', err);
+        alert('فشل النسخ، جرب تاني');
+    }
+}
+
+// تعديل دالة displayAnswers لإضافة خاصية النسخ
+function displayAnswers() {
+    const container = document.getElementById('answers-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    const groupedByLevel = {};
+    answersData.forEach(item => {
+        if (!groupedByLevel[item.level]) {
+            groupedByLevel[item.level] = {};
+        }
+        if (!groupedByLevel[item.level][item.lesson]) {
+            groupedByLevel[item.level][item.lesson] = [];
+        }
+        groupedByLevel[item.level][item.lesson].push(item.code);
+    });
+
+    const sortedLevels = Object.keys(groupedByLevel).sort((a, b) => a - b);
+
+    sortedLevels.forEach(level => {
+        const levelCard = document.createElement('div');
+        levelCard.className = 'level-card';
+        
+        const levelTitle = document.createElement('h2');
+        levelTitle.innerHTML = `<i class="fas fa-layer-group"></i> المستوى ${level}`;
+        levelCard.appendChild(levelTitle);
+
+        const lessons = groupedByLevel[level];
+        const sortedLessons = Object.keys(lessons).sort((a, b) => a - b);
+
+        sortedLessons.forEach(lesson => {
+            const lessonCard = document.createElement('div');
+            lessonCard.className = 'lesson-card';
+            
+            const lessonTitle = document.createElement('h3');
+            
+            if (lesson == 0) {
+                lessonTitle.innerHTML = `<i class="fas fa-graduation-cap" style="color: #7c3aed;"></i> 🎓 نهاية الفصل`;
+            } else {
+                lessonTitle.innerHTML = `<i class="fas fa-book-open"></i> الدرس ${lesson}`;
+            }
+            
+            lessonCard.appendChild(lessonTitle);
+
+            const answersList = document.createElement('ul');
+            answersList.className = 'answers-list-ul';
+
+            lessons[lesson].forEach(code => {
+                const listItem = document.createElement('li');
+                listItem.className = 'answer-item';
+                // إضافة أيقونة النسخ والنص مع جعل العنصر قابل للضغط
+                listItem.innerHTML = `<i class="fas fa-copy copy-icon"></i> <span class="code-text">${code}</span>`;
+                
+                // إضافة خاصية الضغط للنسخ
+                listItem.addEventListener('click', (e) => {
+                    // منع النسخ إذا ضغط على الأيقونة تحديداً (مش مهم)
+                    e.stopPropagation();
+                    copyToClipboard(code, listItem);
+                });
+                
+                answersList.appendChild(listItem);
+            });
+
+            lessonCard.appendChild(answersList);
+            levelCard.appendChild(lessonCard);
+        });
+
+        container.appendChild(levelCard);
+    });
+}
+// دالة لعرض رسالة منبثقة
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = 'copy-success';
+    notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> ${message}`;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 2000);
+}
+
+// تعديل دالة copyToClipboard لاستخدام الرسالة المنبثقة
+async function copyToClipboard(text, element) {
+    try {
+        await navigator.clipboard.writeText(text);
+        
+        // تغيير شكل العنصر مؤقتاً
+        element.classList.add('copied');
+        const originalInnerHTML = element.innerHTML;
+        element.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
+        
+        setTimeout(() => {
+            element.classList.remove('copied');
+            element.innerHTML = originalInnerHTML;
+        }, 1000);
+        
+        // عرض رسالة منبثقة
+        showNotification('تم نسخ الكود بنجاح! 📋');
+        
+    } catch (err) {
+        console.error('فشل النسخ:', err);
+        showNotification('فشل النسخ، جرب تاني', 'error');
+    }
+}
